@@ -40,7 +40,7 @@ fun SplashScreen(navController:NavHostController)
         alpha.animateTo(
             1f,
             animationSpec = tween(
-                durationMillis = 4000
+                durationMillis = 1000
             )
         )
         delay(3000)

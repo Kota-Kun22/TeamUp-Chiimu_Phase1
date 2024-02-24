@@ -74,5 +74,5 @@ dependencies {
     implementation ("androidx.navigation:navigation-compose:2.8.0-alpha03")
 
     //pager
-    implementation ("com.google.accompanist:accompanist-pager:0.12:.0")
+    implementation ("com.google.accompanist:accompanist-pager:0.12:.0")// for making horizontal swipe through pages
 }

@@ -71,5 +71,8 @@ dependencies {
     implementation("com.airbnb.android:lottie-compose:5.2.0")
 
     //navigation
-    implementation ("androidx.navigation:navigation-compose:2.8.0-alpha02")
+    implementation ("androidx.navigation:navigation-compose:2.8.0-alpha03")
+
+    //pager
+    implementation ("com.google.accompanist:accompanist-pager:0.12:.0")
 }

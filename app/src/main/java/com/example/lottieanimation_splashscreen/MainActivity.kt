@@ -35,6 +35,8 @@ class MainActivity : ComponentActivity() {
 
                         }
                         composable("Home"){
+                            HomeScreen()
+
 
                         }
                     }

@@ -1,5 +1,6 @@
 package com.example.lottieanimation_splashscreen
 
+import android.content.Context
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -30,7 +31,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(navController:NavHostController)
+fun SplashScreen(navController: NavHostController, context: MainActivity)
 {
     val alpha = remember{
         Animatable(0f)
@@ -44,6 +45,18 @@ fun SplashScreen(navController:NavHostController)
             )
         )
         delay(3000)
+
+
+        if (onBoardingIsFinished(context = context)) {
+            navController.popBackStack()
+            navController.navigate("Home")
+        } else {
+            navController.popBackStack()
+            navController.navigate("Onboarding")
+
+        }
+
+
         navController.popBackStack()
         navController.navigate("Onboarding")
     }
@@ -84,6 +97,12 @@ fun LoaderAnimation(modifier: Modifier, anim: Int) {
      val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(anim))
     LottieAnimation(composition = composition, iterations = LottieConstants.IterateForever,modifier=modifier)
 
+
+}
+
+private fun onBoardingIsFinished(context: MainActivity): Boolean {
+    val sharedPreferences = context.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+    return sharedPreferences.getBoolean("isFinished", false)
 
 }
 

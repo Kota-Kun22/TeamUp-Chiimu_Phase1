@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     NavHost(navController = navController, startDestination = "Splash" )
                     {
                         composable("Splash"){
-                            SplashScreen(navController=navController,)
+                            SplashScreen(navController=navController, context = this@MainActivity)
 
                         }
                         composable("Onboarding"){

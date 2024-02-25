@@ -1,5 +1,6 @@
 package com.example.lottieanimation_splashscreen
 
+import android.content.Context
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -161,6 +162,7 @@ fun ButtonsSection(pagerState: PagerState, navController: NavHostController, con
                 )
         }else{
             OutlinedButton(onClick = {
+                onBoardingIsFinished(context=context)
                 navController.popBackStack()
                 navController.navigate("Home")
 
@@ -182,10 +184,6 @@ fun ButtonsSection(pagerState: PagerState, navController: NavHostController, con
             }
             
         }
-
-
-
-
     }
 
 }
@@ -219,5 +217,13 @@ fun IndicatorSingleDot(isSelected: Boolean) {
             if (isSelected) Color(0xFFE92F1E) else Color(0x52FD5F5F)
         )
     )
+}
+
+private fun onBoardingIsFinished(context: MainActivity) {
+    val sharedPreferences = context.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    editor.putBoolean("isFinished", true)
+    editor.apply()
+
 }
 

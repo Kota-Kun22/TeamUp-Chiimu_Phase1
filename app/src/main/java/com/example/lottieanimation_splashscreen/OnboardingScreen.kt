@@ -102,7 +102,7 @@ fun OnboardingScreen(navController: NavHostController, context: MainActivity)
 
         }//horizontal pager
 
-        PageIndicator(
+        PageIndicator(//making custom indicator
             pageCount=animations.size,
             currentPage=pagerState.currentPage,
             modifier=Modifier.padding(60.dp)
@@ -128,7 +128,7 @@ fun ButtonsSection(pagerState: PagerState, navController: NavHostController, con
     {
         if(pagerState.currentPage!=2)
         {
-            Text(text="NEXT",
+            Text(text="NEXT",//implementing the logic for the next button
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 color= Color.Black,
@@ -136,7 +136,7 @@ fun ButtonsSection(pagerState: PagerState, navController: NavHostController, con
                     .align(Alignment.BottomEnd)
                     .clickable {
                        scope.launch {
-                           val nextPage= pagerState.currentPage+1
+                           val nextPage= pagerState.currentPage+1//like here +1 is done in the pagerState.currentPage
                            pagerState.scrollToPage(nextPage)
 
                        }
@@ -144,7 +144,7 @@ fun ButtonsSection(pagerState: PagerState, navController: NavHostController, con
                     }
             )
 
-            Text(text="BACK",
+            Text(text="BACK",//implementing the logic for the back button
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 color= Color.Black,
@@ -152,8 +152,8 @@ fun ButtonsSection(pagerState: PagerState, navController: NavHostController, con
                     .align(Alignment.BottomStart)
                     .clickable {
                         scope.launch {
-                            val prevPage= pagerState.currentPage-1
-                            if(prevPage>=0){
+                            val prevPage= pagerState.currentPage-1//like here -1 is done in the pagerState.currentPage
+                            if(prevPage>=0){// page will be 0, 1, 2 like splash
                                 pagerState.scrollToPage(prevPage)
                             }
                         }
@@ -163,7 +163,7 @@ fun ButtonsSection(pagerState: PagerState, navController: NavHostController, con
         }else{
             OutlinedButton(onClick = {
                 onBoardingIsFinished(context=context)
-                navController.popBackStack()
+                navController.popBackStack()//removing the back stack so that by pressing back it will not jump to the previous pages
                 navController.navigate("Home")
 
             },modifier= Modifier
@@ -205,7 +205,7 @@ fun PageIndicator(pageCount: Int, currentPage: Int, modifier: Modifier) {
 
 }
 
-@Composable
+@Composable//here we are making the customise page indicator as we move via the help of pager
 fun IndicatorSingleDot(isSelected: Boolean) {
     val widthOfSingleDot= animateDpAsState(targetValue = if(isSelected) 35.dp else 15.dp,label ="")
     Box(modifier= Modifier
@@ -226,4 +226,6 @@ private fun onBoardingIsFinished(context: MainActivity) {
     editor.apply()
 
 }
+
+
 

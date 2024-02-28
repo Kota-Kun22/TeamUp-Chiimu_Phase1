@@ -85,7 +85,7 @@ fun SplashScreen(navController: NavHostController, context: MainActivity)
         Text(
             text = "Lets Build you a Team !!...",
             fontSize = 28.sp,
-            modifier=Modifier.alpha(alpha.value))
+            modifier=Modifier.alpha(alpha.value))//controls the opacity
 
     }
 

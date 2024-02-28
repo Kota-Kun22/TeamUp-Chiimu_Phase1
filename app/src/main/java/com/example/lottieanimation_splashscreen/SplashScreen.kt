@@ -48,7 +48,7 @@ fun SplashScreen(navController: NavHostController, context: MainActivity)
 
 
         if (onBoardingIsFinished(context = context)) {
-            navController.popBackStack()
+            navController.popBackStack()//removing the back stack so that it dont go on the previous pages unnecessary
             navController.navigate("Home")
         } else {
             navController.popBackStack()
@@ -63,7 +63,7 @@ fun SplashScreen(navController: NavHostController, context: MainActivity)
     Column(/** sorry for this much space but i like this way*/
         modifier= Modifier
             .fillMaxSize()
-            .background(
+            .background(// handling the content of the change in theme
                 if (isSystemInDarkTheme()) {
                     Color.DarkGray
                 } else {

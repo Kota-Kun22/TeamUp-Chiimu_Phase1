@@ -21,7 +21,11 @@ class SignUpViewModel @Inject constructor(private val repo: AuthRepo) : ViewMode
             repo.loginUser(email, password).collect { result ->
                 when (result) {
                     is Resources.Success -> {
+<<<<<<< HEAD
                         _signUpState.send(Resources.Success(SignUpState(isSuccess = "Sign Up Success")))
+=======
+                        _signUpState.send(Resources.Success(SignInState(isSuccess = "Sign In Success")))
+>>>>>>> origin/dev
                     }
                     is Resources.Error -> {
                         _signUpState.send(Resources.Error(message = result.message ?: "An error occurred"))

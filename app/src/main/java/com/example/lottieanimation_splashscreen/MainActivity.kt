@@ -11,8 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.lottieanimation_splashscreen.presentation.SignUpScreen
 import com.example.lottieanimation_splashscreen.ui.theme.LottieAnimation_splashScreenTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,16 +31,13 @@ class MainActivity : ComponentActivity() {
                     {
                         composable("Splash"){
                             SplashScreen(navController=navController, context = this@MainActivity)
-
                         }
+
                         composable("Onboarding"){
                             OnboardingScreen(navController= navController, context = this@MainActivity)
-
                         }
-                        composable("Home",){
+                        composable("Home"){
                             HomeScreen()
-
-
                         }
                     }
 

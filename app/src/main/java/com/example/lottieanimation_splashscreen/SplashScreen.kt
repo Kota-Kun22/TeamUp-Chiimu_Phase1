@@ -89,7 +89,6 @@ fun SplashScreen(navController: NavHostController, context: MainActivity)
 
     }
 
-
 }
 
 @Composable

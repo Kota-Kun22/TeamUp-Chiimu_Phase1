@@ -44,7 +44,7 @@ fun SplashScreen(navController: NavHostController, context: MainActivity)
                 durationMillis = 1000
             )
         )
-        delay(3000)
+        delay(3000)//xyzz
 
 
         if (onBoardingIsFinished(context = context)) {

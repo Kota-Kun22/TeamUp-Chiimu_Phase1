@@ -41,7 +41,7 @@ fun SplashScreen(navController: NavHostController, context: MainActivity)
         alpha.animateTo(
             1f,
             animationSpec = tween(
-                durationMillis = 1000
+                durationMillis = 2500
             )
         )
         delay(3000)//xyzz
@@ -55,10 +55,6 @@ fun SplashScreen(navController: NavHostController, context: MainActivity)
             navController.navigate("Onboarding")
 
         }
-
-
-        navController.popBackStack()
-        navController.navigate("Onboarding")
     }
     Column(/** sorry for this much space but i like this way*/
         modifier= Modifier
@@ -101,7 +97,7 @@ fun LoaderAnimation(modifier: Modifier, anim: Int) {
 }
 
 private fun onBoardingIsFinished(context: MainActivity): Boolean {
-    val sharedPreferences = context.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+    val sharedPreferences = context.getSharedPreferences("Onboarding", Context.MODE_PRIVATE)
     return sharedPreferences.getBoolean("isFinished", false)
 
 }

@@ -220,7 +220,7 @@ fun IndicatorSingleDot(isSelected: Boolean) {
 }
 
 private fun onBoardingIsFinished(context: MainActivity) {
-    val sharedPreferences = context.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+    val sharedPreferences = context.getSharedPreferences("Onboarding", Context.MODE_PRIVATE)
     val editor = sharedPreferences.edit()
     editor.putBoolean("isFinished", true)
     editor.apply()

@@ -97,7 +97,7 @@ fun LoaderAnimation(modifier: Modifier, anim: Int) {
 }
 
 private fun onBoardingIsFinished(context: MainActivity): Boolean {
-    val sharedPreferences = context.getSharedPreferences("Onboarding", Context.MODE_PRIVATE)
+    val sharedPreferences = context.getSharedPreferences("onboarding", Context.MODE_PRIVATE)
     return sharedPreferences.getBoolean("isFinished", false)
 
 }
